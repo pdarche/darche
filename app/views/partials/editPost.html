@@ -1,0 +1,24 @@
+<div class="post-editor">
+    <a href="/#/blog/{{post._id}}" id="preview" class="flag">Preview</a>
+
+    <label>Title</label>
+    <textarea class="title-input" rows="1" ng-model="post.title">{{post.title}}</textarea>
+
+    <label>Description</label>
+    <textarea id="description" class="post-input" ng-model="post.description">{{post.description}}</textarea>
+
+    <!-- tags should be a transcluded directive -->
+    <label>Tags</label>
+    <textarea id="tags" class="post-input" ng-model="post.tags">{{post.tags}}</textarea>
+
+    <label>Body</label>
+    <textarea class="content-editor" ng-model="post.body">{{post.body}}</textarea>
+
+    <label>Publish?</label>
+    <input type="checkbox" ng-model="post.publish"/>
+
+    <a class="flag editor-save">
+        <div class="editor-save__save">Save</div>
+        <div class="editor-save__icon"></div>
+    </a>
+</div>

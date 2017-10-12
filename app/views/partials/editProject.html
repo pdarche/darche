@@ -1,0 +1,30 @@
+<div class="project-editor">
+    <a href="/#/projects/{{project._id}}" id="preview" class="flag">Preview</a>
+
+    <label>Title</label>
+    <textarea class="title-input" rows="1" ng-model="project.title">{{project.title}}</textarea>
+
+    <label>Description</label>
+    <textarea id="description" class="project-input" ng-model="project.description">{{project.description}}</textarea>
+
+    <!-- tags should be a transcluded directive -->
+    <label>Tags</label>
+    <textarea id="tags" class="project-input" ng-model="project.tags">{{project.tags}}</textarea>
+
+    <label>Cover Image</label>
+    <input type="text" id="image_url" class="project-input" ng-model="project.imageUrl">
+
+    <label>Gyfcat</label>
+    <input type="text" id="gif_url" class="project-input" ng-model="project.gfycat">
+
+    <label>Body</label>
+    <textarea class="content-editor" ng-model="project.body">{{project.body}}</textarea>
+
+    <label>Publish?</label>
+    <input type="checkbox" ng-model="project.publish"/>
+
+    <a class="flag editor-save">
+        <div class="editor-save__save">Save</div>
+        <div class="editor-save__icon"></div>
+    </a>
+</div>

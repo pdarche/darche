@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <base href="/">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+  </head>
+  <body ng-app="darcheApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+      <div pd-nav></div>
+      <div ng-view="" id="app"></div>
+      <div id="footer">
+        <div class="links">
+            <a class="link" href="https://github.com/pdarche" target="_blank"><i size="3" class="fa fa-github"></i></a>
+            <a class="link" href="https://twitter.com/pdarche" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="link" href="mailto:pdarche@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-55009806-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/marked/lib/marked.js"></script>
+    <script src="bower_components/angular-marked/dist/angular-marked.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-auth-interceptor/authHandler.js"></script>
+    <script src="bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
+    <script src="bower_components/p5.js/lib/p5.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/blog.js"></script>
+        <script src="scripts/controllers/projects.js"></script>
+        <script src="scripts/controllers/postDraft.js"></script>
+        <script src="scripts/controllers/projectDraft.js"></script>
+        <script src="scripts/controllers/newPost.js"></script>
+        <script src="scripts/controllers/newProject.js"></script>
+        <script src="scripts/controllers/post.js"></script>
+        <script src="scripts/controllers/project.js"></script>
+        <script src="scripts/controllers/editPost.js"></script>
+        <script src="scripts/controllers/editProject.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/logout.js"></script>
+        <script src="scripts/services/post.js"></script>
+        <script src="scripts/services/project.js"></script>
+        <script src="scripts/services/auth-interceptor.js"></script>
+        <script src="scripts/services/home-interceptor.js"></script>
+        <script src="scripts/services/shared-properties.js"></script>
+        <script src="scripts/services/flocking.js"></script>
+        <script src="scripts/services/gradient.js"></script>
+        <script src="scripts/directives/nav.js"></script>
+        <script src="scripts/directives/project.js"></script>
+        <script src="scripts/directives/post.js"></script>
+        <script src="scripts/directives/editPost.js"></script>
+        <script src="scripts/directives/editProject.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

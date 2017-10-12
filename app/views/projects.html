@@ -1,0 +1,9 @@
+<div id="projects_container">
+    <ul class="content-menu">
+        <li ng-if="$root.loggedIn" class="content-menu__li"><a href="/#/projects/new/project" class="content-menu__a">New</a></li>
+        <li ng-if="$root.loggedIn" class="content-menu__li"><a href="/#/drafts/projects" class="content-menu__a">Drafts</a></li>
+    </ul>
+	<div class="projects">
+		<pd-project class="project-partial" ng-repeat="project in projects | orderBy:'-timestamp'"></pd-project>
+	</div>
+</div>

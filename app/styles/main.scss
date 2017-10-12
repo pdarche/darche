@@ -1,0 +1,588 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+// Variables
+$blackish: #333;
+$pad: 20px;
+$sans-font: "Open Sans";
+
+/*
+* BASE
+*
+*
+*
+*/
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+pre {
+  background-color: white;
+  border-radius: 0;
+  border: 1px solid #aaa;
+}
+
+/*
+* LAYOUT
+*
+*
+*
+*/
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#container {
+  max-width:700px;
+  margin: 0px auto;
+  padding: 50px 10px 10px 10px;
+}
+
+#projects_container {
+  max-width: 1130px;
+  margin: 0px auto;
+  padding: 50px 10px 10px 10px;
+}
+
+#home_canvas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  height: 99%;
+}
+
+#defaultCanvas {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+#footer {
+  position: fixed;
+  bottom:10px;
+  width: 100%;
+  height: 30px;
+}
+
+
+/*
+* MODULES
+*
+*
+*
+*/
+
+// Greeting
+
+#greeting_container {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: -3%;
+  padding: 30px 30px 50px 30px;
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.greeting {
+  font-size: 150px;
+  line-height: 80%;
+  font-family: "Open Sans";
+  font-weight: 300;
+}
+
+.intro {
+  display: flex;
+  align-items: flex-end;
+
+  font-size: 20px;
+  font-family: $sans-font;
+  margin-left: 20px;
+  max-width: 300px;
+
+}
+
+// Links
+
+.links {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  margin: 0px 8px;
+  font-size: 22px;
+  color: #ccc;
+}
+
+// Login Form
+
+.login-form {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.login-form__input {
+  width: 100%;
+  margin: 5px 0px;
+  height: 40px;
+}
+
+.login-form__btn {
+  width: 100%;
+}
+
+
+
+// Navigation
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+// Nav Bar
+.nav-bar {
+  position: relative;
+  top: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+  height: 45px;
+  padding: 5px 0px;
+
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  transition: all .1s linear;
+}
+
+.nav-bar--hidden {
+  top: -60px;
+  transition: all .1s linear;
+}
+
+
+// Nav Menu
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu__ul {
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+
+  list-style-type: none;
+}
+
+.nav-menu__li {
+  display: flex;
+  height: 100%;
+  padding: 0px 10px;
+
+  text-align: center;
+  align-self: center;
+}
+
+.nav-menu__a {
+  color: #333;
+  font-weight: 600;
+  font-family: $sans-font;
+  align-self: center;
+}
+
+
+
+// Nav Icon
+.nav-icon {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+
+  width: 40px;
+  height: 25px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav-icon__icon {
+  position: relative;
+  left: 7px;
+  top: 10px;
+  width: 25px;
+  border: 2px solid black;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: .4em;
+    left: -2px;
+    width: 25px;
+    border: 2px solid black;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    bottom: .4em;
+    border: 2px solid black;
+    width: 25px;
+  }
+}
+
+
+
+// Editor
+
+.post-input, .project-input {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  border: 1px solid #eee;
+}
+
+.title-input {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  font-size: 30px;
+  border: 1px solid #eee;
+}
+
+.content-editor {
+  height: 500px;
+  width: 100%;
+
+  margin: 0px 0px 20px 0px;
+  border: 1px solid #eee;
+}
+
+
+
+// Flag
+
+.flag {
+  background-color: #eee;
+  padding: 10px;
+  position: fixed;
+  top: 47%;
+  left: 13%;
+  width: 100px;
+  height: 40px;
+}
+
+.editor-save {
+  top: 53%;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.editor-save__save {
+  float: left;
+}
+
+.editor-save__icon {
+  width: 30px;
+  height: 30px;
+  margin-top: -5px;
+  float: right;
+  background-size: cover;
+}
+
+// Content Menu
+.content-menu {
+  list-style-type: none;
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+.content-menu__li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.content-menu__a {
+  color: #333;
+  font-weight: 600;
+}
+
+
+// Projects Page
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+// Post/Project Single Page
+
+/* this should be a mixin! */
+.big-serif {
+  font-family: Georgia, "Cambria", serif;
+  font-size: 18px;
+}
+
+
+// Single Blog Post / Project pages
+
+.post, .project {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.post__title, .project__title {
+  font-size: 45px;
+  margin: 10px 0px;
+
+  font-family: $sans-font;
+}
+
+.post__meta, .project__meta {
+  margin: 0;
+
+  color: #999;
+  font-size: 90%;
+  font-family: $sans-font;
+}
+
+.post__body, .project__body {
+  /*font-family: Georgia, "Cambria", serif;*/
+  font-family: $sans-font;
+  font-size: 18px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+
+// Blog Post Partial
+.post-partial {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.post-partial__title {
+  font-weight: 500;
+  font-family: $sans-font;
+}
+
+.post-partial__a {
+  color: $blackish;
+  margin: 0px 2px;
+}
+
+.post-partial__meta {
+  margin: 0;
+
+  color: #999;
+  font-size: 90%;
+  font-family: $sans-font;
+}
+
+.post-partial__description {
+  /*font-family: Georgia, "Cambria", serif;*/
+  font-family: $sans-font;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8em
+}
+
+// Projects Partial
+
+.project-partial {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  margin: 20px 10px 10px 10px;
+  max-width: 350px;
+  max-height: 350px;
+  overflow: hidden;
+}
+
+project-partial__title {
+  width: 100%;
+  height: 30px;
+  margin: 0px;
+
+  color: $blackish;
+}
+
+.project-partial__title-a {
+  font-weight: 200;
+  font-size: 20px;
+  font-family: $sans-font;
+  color: $blackish;
+}
+
+.project-partial__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.project-partial__info {
+  height: 100%;
+  background-color: rgba(255, 255, 255, .7);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: $blackish;
+
+  -webkit-transition: all .1s linear;
+}
+
+.project-partial__info {
+  margin-left: 5px;
+  text-align: right;
+}
+
+.project-partial__meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-family: $sans-font
+}
+
+.project-partial__image {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  object-fit: cover;
+}
+
+
+.no-show{
+  visibility: hidden;
+  -webkit-transition: all .1s linear;
+}
+
+.editor-save-button {
+
+}
+
+
+/*
+* RESPONSIVE
+*
+*
+*
+*/
+
+@media screen and (max-width: 600px) {
+  #container {
+   width: 100%;
+   padding: 50px 30px 10px 30px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .project-partial {
+   max-width: 400px;
+  }
+
+  .flag, .editor-save-button {
+    position: fixed;
+    left: 0px;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .projects {
+   display: flex;
+   justify-content: center;
+  }
+
+  .project-partial {
+   max-width: 600px;
+  }
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+/*
+  .container {
+    max-width: 730px;
+  }
+*/
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

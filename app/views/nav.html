@@ -1,0 +1,16 @@
+<nav class="nav">
+    <div class="nav-icon">
+        <div class="nav-icon__icon"></div>
+    </div>
+    <div class="nav-bar nav-bar--hidden">
+        <div class="nav-menu">
+        	<ul class="nav-menu__ul">
+        		<li class="nav-menu__li"><a class="nav-menu__a" href="/">Darche</a></li>
+        		<li class="nav-menu__li"><a class="nav-menu__a" href="/#/blog">Blog</a></li>
+        		<li class="nav-menu__li"><a class="nav-menu__a" href="/#/projects">Projects</a></li>
+        		<!-- <li class="nav-menu__li"><a class="nav-menu__a" href="/#/login">Login</a></li> -->
+        		<li ng-if="$root.loggedIn" id="logout" class="nav-menu__li"><a class="nav-menu__a" href="/#/logout">Logout</a></li>
+        	</ul>
+        </div>
+    </div>
+</nav>
