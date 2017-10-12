@@ -539,6 +539,11 @@ project-partial__title {
 }
 
 @media screen and (max-width: 1130px) {
+  .projects {
+   width: 840px;
+   margin: 0px auto;
+  }
+
   .project-partial {
    max-width: 400px;
   }
@@ -553,10 +558,11 @@ project-partial__title {
   .projects {
    display: flex;
    justify-content: center;
+   width: auto;
   }
 
   .project-partial {
-   max-width: 600px;
+   max-width: 400px;
   }
 }
 
