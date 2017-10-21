@@ -4,6 +4,7 @@
         <li ng-if="$root.loggedIn" class="content-menu__li"><a href="/#/drafts/projects" class="content-menu__a">Drafts</a></li>
     </ul>
 	<div class="projects">
-		<pd-project class="project-partial" ng-repeat="project in projects | orderBy:'-timestamp'"></pd-project>
+        <pd-project-placeholder class="project-partial-placeholder" ng-repeat="placeholder in placeholders"></pd-project-placeholder>
+		<pd-project class="project-partial ng-hide" ng-repeat="project in projects | orderBy:'-timestamp'"></pd-project>
 	</div>
 </div>

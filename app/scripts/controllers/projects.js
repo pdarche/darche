@@ -10,8 +10,10 @@
 
 angular.module('darcheApp')
   .controller('ProjectsCtrl', ['$scope', '$http', '$window', 'Project', function ($scope, $http, $window, Project) {
-    var projects = Project.query({publish:true}, function(){
+    $scope.placeholders = [1,2,3]
+    var projects = Project.query({publish: true}, function(){
       // I want this to be intercepted!
+      $scope.$broadcast('contentLoaded')
       $scope.projects = projects.rows.map(function(row){ return row.doc; })
                           .filter(function(doc){ return doc.publish === true; });
 

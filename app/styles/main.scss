@@ -444,7 +444,6 @@ pre {
 }
 
 // Projects Partial
-
 .project-partial {
   display: flex;
   flex-direction: column;
@@ -458,7 +457,25 @@ pre {
   overflow: hidden;
 }
 
-.project-partial__title {
+.project-partial-placeholder {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  margin: 5px;
+  padding: 5px;
+  width: 350px;
+  max-height: 350px;
+}
+
+.project-partial-placeholder__image-container {
+  width: 345px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, .16);
+}
+
+.project-partial__title, .project-partial-placeholder__title {
   width: 100%;
   height: 30px;
   margin: 5px;
@@ -467,6 +484,13 @@ pre {
   justify-content: center;
 
   color: $blackish;
+}
+
+.project-partial-placeholder__title div {
+  width: 120px;
+  height: 25px;
+  margin-top: 5px;
+  background-color: rgba(0, 0, 0, .16);
 }
 
 .project-partial__title-a {
