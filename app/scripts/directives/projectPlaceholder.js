@@ -14,7 +14,7 @@ angular
   .directive('pdProjectPlaceholder', function($rootScope, $timeout){
     return {
       restrict: 'AEC',
-      templateUrl: 'views/partials/project-placeholder.html',
+      templateUrl: 'views/partials/loadingIcon.html',
       link: function(scope, element) {
         scope.$on('contentLoaded', function() {
           element.addClass('ng-hide');

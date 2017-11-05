@@ -10,5 +10,7 @@
 
 angular.module('darcheApp')
   .controller('PostCtrl', ['$scope', '$routeParams', '$http', 'Post', function ($scope, $routeParams, $http, Post) {
-    $scope.post = Post.get({id: $routeParams.id});
+    $scope.post = Post.get({id: $routeParams.id}, function() {
+      $scope.$broadcast('contentLoaded') 
+    });
   }]);

@@ -10,5 +10,7 @@
 
 angular.module('darcheApp')
   .controller('ProjectCtrl', ['$scope', '$routeParams', '$http', 'Project', function ($scope, $routeParams, $http, Project) {
-    $scope.project = Project.get({id: $routeParams.id});
+    $scope.project = Project.get({id: $routeParams.id}, function() {
+      $scope.$broadcast('contentLoaded') 
+    });
   }]);
