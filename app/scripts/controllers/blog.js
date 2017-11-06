@@ -9,21 +9,27 @@
  */
 
 angular.module('darcheApp')
-  .controller('BlogCtrl', ['$scope', '$http', 'Post', function ($scope, $http, Post) {
+  .controller('BlogCtrl', ['$scope', '$http','$timeout' ,'Post', function ($scope, $http, $timeout, Post) {
+    var startTime = new Date();
     var posts = Post.query({publish:true}, function(){
-      $scope.$broadcast('contentLoaded')
-      // I want this to be intercepted!
-      $scope.posts = posts.rows.map(function(row){ return row.doc; })
-                        .filter(function(doc){ return doc.publish === true; });
+      var loadedTime = new Date();
+      var timediff = loadedTime - startTime;
+      var timeout  = timediff < 1500 ? 1500 - timediff : 0
+      $timeout(function() {
+        $scope.$broadcast('contentLoaded')
+        // I want this to be intercepted!
+        $scope.posts = posts.rows.map(function(row){ return row.doc; })
+                          .filter(function(doc){ return doc.publish === true; });
 
-      $scope.delete = function(post) {
-        if (confirm("Are you sure you want to delete this project?")){
-          Post.remove({id: post._id, rev: post._rev}, function(success){
-            _.remove($scope.posts, post)
-          }, function(err){
-            alert('Sorry, something went wrong!');
-          });
+        $scope.delete = function(post) {
+          if (confirm("Are you sure you want to delete this project?")){
+            Post.remove({id: post._id, rev: post._rev}, function(success){
+              _.remove($scope.posts, post)
+            }, function(err){
+              alert('Sorry, something went wrong!');
+            });
+          }
         }
-      }
+      }, timeout)
     });
   }]);

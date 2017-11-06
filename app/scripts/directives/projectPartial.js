@@ -11,10 +11,10 @@
 
 angular
   .module('pdDirectives')
-  .directive('pdProject', function(){
+  .directive('pdProjectPartial', function(){
     return {
       restrict: 'AEC',
-      templateUrl: 'views/projectContent.html',
+      templateUrl: 'views/partials/project.html',
       link: function(scope, el, attrs){
         var video = el.find('video').first();
         var source = el.find('video source').first();

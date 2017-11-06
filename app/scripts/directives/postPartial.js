@@ -10,10 +10,10 @@
 
 angular
   .module('pdDirectives')
-  .directive('pdPost', function(){
+  .directive('pdPostPartial', function(){
     return {
       restrict: 'AEC',
-      templateUrl: 'views/postContent.html',
+      templateUrl: 'views/partials/post.html',
       link: function(scope, el, attrs){
         el.on('click', '.delete', function(ev){
           ev.preventDefault();
