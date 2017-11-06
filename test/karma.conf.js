@@ -34,6 +34,7 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-auth-interceptor/authHandler.js',
       'bower_components/angular-http-auth/src/http-auth-interceptor.js',
+      'bower_components/angular-p5/index.js',
       'bower_components/p5.js/lib/p5.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
