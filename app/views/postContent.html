@@ -1,0 +1,10 @@
+<article class="post">
+  <header>
+    <h1 class="post__title">{{post.title}}</h1>
+    <p class="post__meta">
+      <time datetime="{{post.timestamp}}">{{post.lastUpdated | date:'longDate'}}</time>
+    </p>
+  </header>
+  <div class="post__body" marked="post.body"></div>
+  <div class="comments"></div>
+</article>

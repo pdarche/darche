@@ -3,7 +3,8 @@
 		<li ng-if="$root.loggedIn" class="content-menu__li"><a href="/#/blog/new/post" class="content-menu__a">New</a></li>
 		<li ng-if="$root.loggedIn" class="content-menu__li"><a href="/#/drafts/blog" class="content-menu__a">Drafts</a></li>
 	</ul>
-	<div class="posts" ng-repeat="post in posts | orderBy:'-lastUpdated'">
-		<pd-post></pd-post>
+	<div class="posts">
+        <pd-project-placeholder class="project-partial-placeholder"></pd-project-placeholder>
+		<pd-post-partial class="post-partial" ng-repeat="post in posts | orderBy:'-lastUpdated'"></pd-post-partial>
 	</div>
 </div>
