@@ -11,6 +11,7 @@
 angular.module('darcheApp')
   .controller('DraftPostCtrl', ['$scope', '$http', 'Post', function($scope, $http, Post) {
     var posts = Post.query({publish:true}, function(){
+      $scope.$broadcast('contentLoaded')
       // REFACTOR: this should be done by a couch view
       $scope.posts = posts.rows.map(function(row){ return row.doc; })
                         .filter(function(doc){ return doc.publish === false; });
