@@ -37,6 +37,7 @@ angular
     $httpProvider.interceptors.push('AuthInterceptor');
     $httpProvider.interceptors.push('HomeInterceptor');
     $locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(true);
 
     $routeProvider
       .when('/', {
@@ -98,5 +99,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-      // $locationProvider.html5Mode(true);
   }]);

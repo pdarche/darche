@@ -1,11 +1,11 @@
 <header class="project-partial__header">
     <span class="project-partial__meta">
-        <a ng-if="$root.loggedIn" href="#projects/edit/{{project._id}}" class="project-partial__info">Edit</a>
-        <a ng-if="$root.loggedIn" href="#" class="delete project-partial__info">Delete</a>
+        <a ng-if="$root.loggedIn" href="/#projects/edit/{{project._id}}" class="project-partial__info">Edit</a>
+        <a ng-if="$root.loggedIn" href="/#/" class="delete project-partial__info">Delete</a>
     </span>
 </header>
 <div class="project-partial__image-container">
-    <a href="#/projects/{{project._id}}" class="project-partial__video">
+    <a href="/#/projects/{{project._id}}" class="project-partial__video">
         <video class="project-partial__image" preload="auto" loop>
             <source type="video/webm">
             Sorry, your browser does not support the <code>video</code> tag.
