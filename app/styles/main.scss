@@ -69,18 +69,14 @@ pre {
   padding: 0px;
 }
 
-#container {
+#container, #projects_container {
   max-width:700px;
-  height: 100%;
   margin: 0px auto;
-  padding: 50px 10px 10px 10px;
+  padding: 60px 10px 10px 10px;
 }
 
 #projects_container {
   max-width: 1120px;
-  height: 100%;
-  margin: 0px auto;
-  padding: 50px 10px 10px 10px;
 }
 
 #home_canvas {
@@ -88,15 +84,13 @@ pre {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
-  position: relative;
-  height: 99%;
-}
-
-#defaultCanvas {
-  position: fixed;
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 #footer {
@@ -146,8 +140,8 @@ pre {
 
 }
 
-// Links
 
+// Links
 .links {
   display: flex;
   justify-content: center;
@@ -160,7 +154,6 @@ pre {
 }
 
 // Login Form
-
 .login-form {
   width: 300px;
   margin: 20px auto;
@@ -177,14 +170,12 @@ pre {
 }
 
 
-
 // Navigation
 .nav {
   position: fixed;
   width: 100%;
   z-index: 1;
 }
-
 
 
 // Nav Bar
@@ -292,7 +283,6 @@ pre {
 
 
 // Editor
-
 .post-input, .project-input {
   width: 100%;
   margin: 0px 0px 20px 0px;
@@ -317,7 +307,6 @@ pre {
 
 
 // Flag
-
 .flag {
   background-color: #eee;
   padding: 10px;
@@ -415,10 +404,11 @@ pre {
   padding-top: 10px;
 }
 
+
 // Blog Post Partial
 .post-partial {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   width: 100%;
 }
 
@@ -668,6 +658,14 @@ pre {
   justify-content: center;
   align-items: center;
   height: 75%;
+  width: 200px;
+  height: 200px;
+  margin:0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -120px;
 }
 
 .cssload-thecube {
