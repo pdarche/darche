@@ -70,7 +70,7 @@ pre {
 }
 
 #container, #projects_container {
-  max-width:700px;
+  max-width:640px;
   margin: 0px auto;
   padding: 60px 10px 10px 10px;
 }
@@ -312,7 +312,7 @@ pre {
   padding: 10px;
   position: fixed;
   top: 47%;
-  left: 13%;
+  left: 0px;
   width: 100px;
   height: 40px;
 }
@@ -381,10 +381,25 @@ pre {
   padding-bottom: 20px;
 }
 
-.post__title, .project__title {
-  font-size: 45px;
-  margin: 10px 0px;
+.project header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+}
 
+.project__body video, .project__body img {
+  //width: 60%;
+  min-width: 750px;
+  margin-left: -55px;
+  margin-right: -55px;
+}
+
+.post__title, .project__title {
+  margin: 10px 0px;
+  font-size: 35px;
+  font-weight: 600;
   font-family: $sans-font;
 }
 
@@ -398,9 +413,9 @@ pre {
 
 .post__body, .project__body {
   /*font-family: Georgia, "Cambria", serif;*/
-  font-family: $sans-font;
   font-size: 18px;
-  margin: 0px auto;
+  font-family: $sans-font;
+  margin: 0px auto 40px auto;
   padding-top: 10px;
 }
 
@@ -413,9 +428,10 @@ pre {
 }
 
 .post-partial__title {
-  font-weight: 500;
+  font-weight: 600;
   font-family: $sans-font;
   margin-top: 10px;
+  font-size: 28px;
 }
 
 .post-partial__a {
@@ -436,7 +452,8 @@ pre {
   font-family: $sans-font;
   font-size: 16px;
   color: #444;
-  line-height: 1.8em
+  line-height: 1.8em;
+  margin-top: 8px;
 }
 
 // Projects Partial
@@ -587,6 +604,17 @@ pre {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .project video {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .project header {
+    height: 100px;
+  }
+}
+
 @media screen and (max-width: 1130px) {
   .projects {
    width: 840px;
@@ -613,6 +641,7 @@ pre {
   .project-partial {
    max-width: 400px;
   }
+
 }
 
 
