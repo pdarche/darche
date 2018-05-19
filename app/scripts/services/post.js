@@ -10,7 +10,7 @@
 
 angular.module('darcheApp')
   .factory('Post', ['$resource', function ($resource) {
-    return $resource('https://darche.me/couchdb/posts/:id', {id: '@_id'}, {
+    return $resource('http://localhost:5984/posts/:id', {id: '@_id'}, {
       save: {
         method: 'POST',
         withCredentials: true
@@ -19,10 +19,21 @@ angular.module('darcheApp')
         method: 'PUT',
         withCredentials: true
       },
+      findOne: {
+        method: 'POST',
+        url: 'http://localhost:5984/posts/_find',
+        headers: {'Content-Type':'application/json'},
+        interceptor: {
+          response: function(res) {
+            var post = res.data.docs[0]
+            return post
+          }
+        }
+      },
       query: {
         method: 'GET',
         params: {include_docs: true},
-        url: 'https://darche.me/couchdb/posts/_all_docs',
+        url: 'http://localhost:5984/posts/_all_docs',
         headers: {'Content-Type':'text/plain'},
         withCredentials: true,
         interceptor: {
