@@ -11,21 +11,30 @@
 
 angular
   .module('pdDirectives')
-  .directive('pdProject', function(){
+  .directive('pdProject', ['$timeout', function($timeout) {
     return {
       restrict: 'AEC',
       templateUrl: 'views/projectContent.html',
-      link: function(scope, el, attrs){
+      link: function(scope, el, attrs) {
         var video = el.find('video').first();
         var source = el.find('video source').first();
+
+        // Unhide the content
         el.removeClass('ng-hide');
 
+        // Typeset any math
+        $timeout(function() {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub])
+        }, 2000)
+
+        // Set the video attributes
         video.attr('poster', scope.project.imageUrl);
         video.hide().on('loadeddata', function(){
           video.fadeIn('slow');
         })
         source.attr('src', scope.project.gfycat);
 
+        // Bind the events
         el.on('mouseover', '.project-partial__image', function(ev){
           ev.target.play();
         });
@@ -40,4 +49,4 @@ angular
         });
       }
     }
-  });
+  }]);
