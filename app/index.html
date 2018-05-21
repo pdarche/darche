@@ -8,6 +8,7 @@
     <base href="/">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/highlight/src/styles/xcode.css">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -16,15 +17,14 @@
     <!-- endbuild -->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
         tex2jax: {
           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
         }
       });
     </script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
   </head>
   <body ng-app="darcheApp">
     <!--[if lt IE 7]>
@@ -80,6 +80,8 @@
     <script src="bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
     <script src="bower_components/angular-p5/index.js"></script>
     <script src="bower_components/p5.js/lib/p5.min.js"></script>
+    <script src="bower_components/MathJax/unpacked/MathJax.js"></script>
+    <script src="bower_components/highlight/build/highlight.pack.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

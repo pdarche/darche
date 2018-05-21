@@ -10,7 +10,7 @@
 
 angular.module('darcheApp')
   .factory('Project', ['$resource', function($resource) {
-    return $resource('https://darche.me/couchdb/projects/:id', {id: '@_id'}, {
+    return $resource('http://localhost:5984/projects/:id', {id: '@_id'}, {
       save: {
         method: 'POST',
         withCredentials: true
@@ -22,7 +22,7 @@ angular.module('darcheApp')
       query: {
         method: 'GET',
         params: {include_docs: true},
-        url: 'https://darche.me/couchdb/projects/_all_docs',
+        url: 'http://localhost:5984/projects/_all_docs',
         headers: {'Content-Type':'text/plain'},
         withCredentials: true,
         interceptor: {
