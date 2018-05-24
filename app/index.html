@@ -7,11 +7,6 @@
     <meta name="viewport" content="width=device-width">
     <base href="/">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <link rel="stylesheet" href="bower_components/highlight/src/styles/xcode.css">
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
     <style> 
         body {
           position: absolute;
@@ -209,8 +204,9 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.slim.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -219,11 +215,12 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/marked/lib/marked.js"></script>
     <script src="bower_components/angular-marked/dist/angular-marked.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-auth-interceptor/authHandler.js"></script>
     <script src="bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
     <script src="bower_components/angular-p5/index.js"></script>
-    <script async src="bower_components/p5.js/lib/p5.min.js"></script>
-    <script async src="bower_components/highlightjs/highlight.pack.js"></script> 
+    <script src="bower_components/p5.js/lib/p5.min.js"></script>
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -261,6 +258,12 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:css(.) styles/vendor.css -->
+        <link rel="stylesheet" href="bower_components/highlight/src/styles/xcode.css">
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css">
+        <!-- endbower -->
         <!-- endbuild -->
 </body>
 </html>
