@@ -18,11 +18,10 @@ angular
       link: function(scope, el, attrs){
         var video = el.find('video').first();
         var source = el.find('video source').first();
-        el.removeClass('ng-hide');
 
         video.attr('poster', scope.project.imageUrl);
-        video.hide().on('loadeddata', function(){
-          video.fadeIn('slow');
+        video.on('loadeddata', function(){
+          el.removeClass('opaque');
         })
         source.attr('src', scope.project.gfycat);
 

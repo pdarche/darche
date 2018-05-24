@@ -12,7 +12,6 @@
 angular
   .module('darcheApp', [
     'http-auth-interceptor',
-    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',

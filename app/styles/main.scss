@@ -13,6 +13,7 @@ $blackish: #333;
 $pad: 20px;
 $sans-font: "Open Sans";
 
+
 /*
 * BASE
 *
@@ -481,6 +482,9 @@ pre {
   max-width: 360px;
   max-height: 350px;
   overflow: hidden;
+
+  opacity: 1;
+  transition: opacity 250ms ease-in;
 }
 
 .project-partial-placeholder {
@@ -699,6 +703,18 @@ pre {
 #app.ng-enter.ng-enter-active {
   opacity: 1;
 }
+
+
+/*
+* CLASSES 
+*
+*
+*
+*/
+.opaque {
+  opacity: 0;
+}
+
 
 /* Loading Icon */
 .loading-container {
