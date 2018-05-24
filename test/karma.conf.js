@@ -36,7 +36,6 @@ module.exports = function(config) {
       'bower_components/angular-http-auth/src/http-auth-interceptor.js',
       'bower_components/angular-p5/index.js',
       'bower_components/p5.js/lib/p5.min.js',
-      'bower_components/MathJax/MathJax.js',
       'bower_components/highlightjs/highlight.pack.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower

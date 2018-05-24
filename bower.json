@@ -16,7 +16,6 @@
     "angular-http-auth": "^1.5.0",
     "angular-p5": "./bower_components/angular-p5/angular-p5.js",
     "p5.js": "p5js#^0.5.13",
-    "MathJax": "2.7.4",
     "highlightjs":"^9.12.0"
   },
   "devDependencies": {
