@@ -24,6 +24,7 @@ angular
           el.removeClass('opaque');
         })
         source.attr('src', scope.project.gfycat);
+        video.play();
 
         el.on('mouseover', '.project-partial__image', function(ev){
           ev.target.play();
