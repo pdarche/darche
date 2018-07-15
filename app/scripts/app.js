@@ -50,11 +50,11 @@ angular
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl'
       })
-      .when('/blog/:id', {
+      .when('/blog/:slug', {
         templateUrl: 'views/post.html',
         controller: 'PostCtrl'
       })
-      .when('/blog/edit/:id',{
+      .when('/blog/edit/:slug',{
         templateUrl: 'views/editPost.html',
         controller: 'EditPostCtrl'
       })
@@ -70,11 +70,11 @@ angular
         templateUrl: 'views/projects.html',
         controller: 'ProjectsCtrl'
       })
-      .when('/projects/:id', {
+      .when('/projects/:slug', {
         templateUrl: 'views/project.html',
         controller: 'ProjectCtrl'
       })
-      .when('/projects/edit/:id',{
+      .when('/projects/edit/:slug',{
         templateUrl: 'views/editProject.html',
         controller: 'EditProjectCtrl'
       })
