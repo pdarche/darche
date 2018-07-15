@@ -18,20 +18,13 @@ angular
       link: function(scope, el, attrs){
         var video = el.find('video').first();
         var source = el.find('video source').first();
+        window.video = video
 
         video.attr('poster', scope.project.imageUrl);
         video.on('loadeddata', function(){
           el.removeClass('opaque');
         })
         source.attr('src', scope.project.gfycat);
-
-        el.on('mouseover', '.project-partial__image', function(ev){
-          ev.target.play();
-        });
-
-        el.on('mouseout', '.project-partial__image', function(ev){
-          ev.target.pause();
-        });
 
         el.on('click', '.delete', function(ev){
           ev.preventDefault();
