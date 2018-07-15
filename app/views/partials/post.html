@@ -1,9 +1,9 @@
 <header>
-    <h2 class="post-partial__title"><a href="/#/blog/{{post._id}}" class="post-partial__a">{{post.title}}</a></h2>
+    <h2 class="post-partial__title"><a href="#blog/{{post.slug}}" class="post-partial__a">{{post.title}}</a></h2>
     <p class="post-partial__meta">
         <time datetime="{{post.timestamp}}">{{post.lastUpdated | date:'longDate'}}</time>
-        <a ng-if="$root.loggedIn" href="/#/blog/edit/{{post._id}}" class="post-partial__a">Edit</a>
-        <a ng-if="$root.loggedIn" href="/#/" class="delete post-partial__a">Delete</a>
+        <a ng-if="$root.loggedIn" href="#blog/edit/{{post.slug}}" class="post-partial__a">Edit</a>
+        <a ng-if="$root.loggedIn" href="#" class="delete post-partial__a">Delete</a>
     </p>
 </header>
 <div class="post-partial__description">

@@ -19,6 +19,17 @@ angular.module('darcheApp')
         method: 'PUT',
         withCredentials: true
       },
+      findOne: {
+        method: 'POST',
+        url: 'http://localhost:5984/projects/_find',
+        headers: {'Content-Type':'application/json'},
+        interceptor: {
+          response: function(res) {
+            var project = res.data.docs[0]
+            return project
+          }
+        }
+      },
       query: {
         method: 'GET',
         params: {include_docs: true},

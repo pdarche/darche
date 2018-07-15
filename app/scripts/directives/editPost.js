@@ -10,7 +10,7 @@
 
 angular
   .module('pdDirectives')
-  .directive('pdEditPost', ['$window', 'Post', function ($window, Post){
+  .directive('pdEditPost', ['$window', 'Utils', 'Post', function ($window, Utils, Post){
     return {
       restrict: 'AEC',
       templateUrl: 'views/partials/editPost.html',
@@ -18,11 +18,13 @@ angular
         el.on('click', '.editor-save', function(ev){
           ev.preventDefault();
 
-          el.find('.editor-save__icon').css({'background-image':'url("/images/ripple.gif")'});
+          el.find('.editor-save__icon')
+            .css({'background-image':'url("/images/ripple.gif")'});
 
           var updateTime = new Date().getTime();
           scope.post.updates.push(updateTime);
           scope.post.lastUpdated = updateTime;
+          scope.post.slug = Utils.slugify(scope.post.title)
 
           Post.update({id: scope.post._id}, scope.post, function(data){
               scope.post._rev = data.rev;
@@ -39,10 +41,11 @@ angular
           var updateTime = new Date().getTime();
           scope.post.updates.push(updateTime);
           scope.post.lastUpdated = updateTime;
+          scope.post.slug = Utils.slugify(scope.post.title)
 
           Post.update({id: scope.post._id}, scope.post, function(data){
               scope.post._rev = data.rev;
-              $window.location.href = '/#/blog/' + scope.post._id;
+              $window.location.href = '/#/blog/' + scope.post.slug;
             }, function(err){
               alert("Error!");
           });
