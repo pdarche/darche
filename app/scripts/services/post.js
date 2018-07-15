@@ -21,7 +21,7 @@ angular.module('darcheApp')
       },
       findOne: {
         method: 'POST',
-        url: 'http://localhost:5984/posts/_find',
+        url: 'https://darche.me/couchdb/posts/_find',
         headers: {'Content-Type':'application/json'},
         interceptor: {
           response: function(res) {
