@@ -18,13 +18,14 @@ angular.module('darcheApp')
       updates: [],
       lastUpdated: null,
       timestamp: new Date().getTime(),
-      publish: false
+      publish: false,
+      slug: "temp-" + Math.floor(Math.random() * 1000000000)
     };
     $scope.project = new Project(projectConfig);
 
     Project.save($scope.project, function(data){
       $scope.project._id = data.id;
       $scope.project._rev = data.rev;
-      $window.location.href = '/#/projects/edit/' + data.id;
+      $window.location.href = '/#/projects/edit/' + projectConfig.slug;
     });
   }]);

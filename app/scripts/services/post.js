@@ -38,7 +38,7 @@ angular.module('darcheApp')
         withCredentials: true,
         interceptor: {
           response: function(res){
-            res.data = res.data.rows.filter(function(row){ return row.doc; });
+            res.data = res.data.rows.map(function(row){ return row.doc; });
             return res;
           }
         }
