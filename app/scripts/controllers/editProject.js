@@ -12,7 +12,6 @@ angular.module('darcheApp')
   .controller('EditProjectCtrl', ['$scope', '$routeParams', '$http', 'Project', function ($scope, $routeParams, $http, Project) {
     Project.findOne({selector: {slug: $routeParams.slug}}, function(project) {
       $scope.project = project;
-
       $scope.submit = function() {
         var updateTime = new Date().getTime();
         $scope.project.updates.push(updateTime);

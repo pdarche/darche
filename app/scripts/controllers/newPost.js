@@ -18,13 +18,14 @@ angular.module('darcheApp')
       updates: [],
       lastUpdated: null,
       timestamp: new Date().getTime(),
-      publish: false
-    };
+      publish: false,
+      slug: "temp-" + Math.floor(Math.random() * 1000000000)
+    };    
     $scope.post = new Post(postConfig);
 
     Post.save($scope.post, function(data){
       $scope.post._id = data.id;
       $scope.post._rev = data.rev;
-      $window.location.href = '/#/blog/edit/' + data.id;
+      $window.location.href = '/#/blog/edit/' + postConfig.slug;
     });
   }]);

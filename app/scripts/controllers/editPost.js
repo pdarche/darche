@@ -29,6 +29,7 @@ angular.module('darcheApp')
         if (confirm("Are you sure you want to delete this post?")){
           Post.remove({id: post._id, rev: post._rev}, function(success){
             // add successful delete notification
+            console.log('deleted', post)
           }, function(err){
             alert('Sorry, something went wrong!');
           });
