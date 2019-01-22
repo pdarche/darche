@@ -10,7 +10,7 @@
 
 angular.module('darcheApp')
   .factory('Project', ['$resource', function($resource) {
-    return $resource('https://darche.me/couchdb/projects/:id', {id: '@_id'}, {
+    return $resource('https://darche.pizza/couchdb/projects/:id', {id: '@_id'}, {
       save: {
         method: 'POST',
         withCredentials: true
@@ -21,7 +21,7 @@ angular.module('darcheApp')
       },
       findOne: {
         method: 'POST',
-        url: 'https://darche.me/couchdb/projects/_find',
+        url: 'https://darche.pizza/couchdb/projects/_find',
         headers: {'Content-Type':'application/json'},
         interceptor: {
           response: function(res) {
@@ -33,7 +33,7 @@ angular.module('darcheApp')
       query: {
         method: 'GET',
         params: {include_docs: true},
-        url: 'https://darche.me/couchdb/projects/_all_docs',
+        url: 'https://darche.pizza/couchdb/projects/_all_docs',
         headers: {'Content-Type':'text/plain'},
         withCredentials: true,
         interceptor: {

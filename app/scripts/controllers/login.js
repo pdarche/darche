@@ -18,7 +18,7 @@ angular.module('login', ['http-auth-interceptor', 'ngCookies'])
         password: $scope.user.password
       };
 
-      $http.post('https://darche.me/couchdb/_session', reqData, {withCredentials: true})
+      $http.post('https://darche.pizza/couchdb/_session', reqData, {withCredentials: true})
         .then(function(data, status, headers, config) {
           authService.loginConfirmed();
           $window.sessionStorage.token = 'authenticated';
